@@ -1,0 +1,136 @@
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	user-select: none;
+	color: var(--text-color);
+	font-family: 'Gloria Hallelujah', cursive;
+	transition: background 0.5s;
+}
+
+:root {
+	--bg-color: #eff4f9;
+	--calendar-bg: #f8faf8;
+	--text-color: #29232c;
+	--selected-day-text-color: #ffffff;
+	--selected-day-bg: #0073f7;
+	--lighter-text-color: #98999b;
+	--border-effect-color: #000000;
+}
+
+.darkmode {
+	--bg-color: #4b4b59;
+	--calendar-bg: #131228;
+	--text-color: #e4e1e0;
+	--selected-day-text-color: #ffffff;
+	--selected-day-bg: #0073f7;
+	--lighter-text-color: #727187;
+	--border-effect-color: #494a4b;	
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	background: var(--bg-color);
+}
+
+.container {
+	position: absolute;
+	width: min-content;
+	height: min-content;
+	inset: 0;
+	margin: auto;
+}
+
+.calendar {
+	width: 450px;
+	height: 550px;
+	background: var(--calendar-bg);
+	border-radius: 10px;
+	box-shadow: 0 0 15px 0 #55555544;
+	padding: 30px 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.calendar-head {
+	display: flex;
+	justify-content: space-between;
+	font-size: 2rem;
+	font-weight: 900;
+	height: 50px;
+}
+
+.calendar-selector {
+	display: flex;
+	align-items: center;
+}
+
+.calendar-month, .calendar-year {
+	width: 80px;
+}
+
+.calendar-selector > i {
+	font-size: 1.2rem;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.calendar-month {
+	text-align: center;
+	cursor: pointer;
+}
+
+.calendar-year {
+	text-align: center;
+}
+
+.calendar-days {
+	display: grid;
+	grid-auto-flow: columns;
+	text-align: center;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: 1fr;
+	flex-grow: 1;
+}
+
+.calendar-weekday {
+	color: var(--lighter-text-color);
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+
+.calendar-day {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+}
+
+.calendar-day.selected {
+	background: var(--selected-day-bg);
+	color: var(--selected-day-text-color);
+}
+
+.calendar-day:hover {
+	outline: 3px solid var(--border-effect-color);
+}
+
+.switcher {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.calendar-reset {
+	padding: 5px 10px;
+	background: var(--selected-day-bg);
+	color: var(--selected-day-text-color);
+	border-radius: 15px;
+	cursor: pointer;
+}
